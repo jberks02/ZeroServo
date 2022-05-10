@@ -8,6 +8,7 @@
  *
  */
 #include "main.h"
+#include "./servo51.cpp"
 using namespace std;
 
 int main()
@@ -18,24 +19,19 @@ int main()
 
     gpio_set_dir(LED, GPIO_OUT);
 
+    gpio_put(LED, 1);
+
     stdio_init_all();
 
-    int a = 4;
+    S51Servo zeroedServo(0);
 
-    int b = 8;
+   while(true) {
 
-    int c = a + b; 
+       zeroedServo.setServoAngleByAngle(0);
 
-    cout << c << '\n';
+       sleep_ms(1000);
 
-    while (true)
-    {
-        cout << "Deadly Virus";
-        gpio_put(LED, 1);
-        sleep_ms(a * 100);
-        gpio_put(LED, 0);
-        sleep_ms(b * 100);
-    }
+   }
 
     return 0;
 }

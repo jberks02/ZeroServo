@@ -30,6 +30,7 @@
 #include "hardware/spi.h"
 #include "hardware/adc.h"
 #include "hardware/uart.h"
+#include "hardware/pwm.h"
 
 #ifdef __cplusplus
 extern "C"
